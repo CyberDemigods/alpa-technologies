@@ -1,26 +1,205 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Vazirmatn (Persian) ──────────────────────────────────── */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/fonts/webfonts/Vazirmatn-Variable.woff2")
+    format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+200C-200F, U+25CC, U+FB50-FDFF, U+FE70-FEFF;
 }
 
+/* ── Tailwind v4 theme tokens ─────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-deep: #030712;
+  --color-section: #0a0e1a;
+  --color-card: rgba(17, 24, 39, 0.5);
+  --color-card-solid: #111827;
+  --color-card-hover: #1a2235;
+  --color-neon: #f59e0b;
+  --color-neon-light: #fbbf24;
+  --color-neon-dark: #d97706;
+  --color-electric: #ef4444;
+  --color-electric-light: #f87171;
+  --color-border-custom: #243049;
+  --color-border-light: rgba(36, 48, 73, 0.5);
+  --color-text-primary: #e5e7eb;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base ──────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #030712;
+  color: #e5e7eb;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Persian / RTL font override */
+[dir="rtl"] body,
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select,
+[dir="rtl"] button {
+  font-family: "Vazirmatn", system-ui, -apple-system, sans-serif;
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+/* ── Selection ────────────────────────────────────────────── */
+::selection {
+  background-color: rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+}
+
+/* ── Custom scrollbar ─────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #243049;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #243049 #030712;
+}
+
+/* ── Glass card ───────────────────────────────────────────── */
+.glass-card {
+  background: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #243049;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(26, 34, 53, 0.7);
+  border-color: rgba(245, 158, 11, 0.3);
+  box-shadow: 0 0 24px rgba(245, 158, 11, 0.08);
+}
+
+/* ── Badges ───────────────────────────────────────────────── */
+.badge--new {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge--bestseller {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* ── Product card hover ───────────────────────────────────── */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(245, 158, 11, 0.06);
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.05);
+}
+
+.product-card__image {
+  transition: transform 0.4s ease;
+}
+
+/* ── Contact form fields ──────────────────────────────────── */
+.form-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(17, 24, 39, 0.6);
+  border: 1px solid #243049;
+  border-radius: 0.5rem;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.form-field::placeholder {
+  color: #6b7280;
+}
+
+.form-field:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+}
+
+[dir="rtl"] .form-field {
+  text-align: right;
+}
+
+/* ── Section headings ─────────────────────────────────────── */
+.section-heading {
+  position: relative;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  padding-bottom: 0.75rem;
+}
+
+.section-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3rem;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b, transparent);
+  border-radius: 2px;
+}
+
+[dir="rtl"] .section-heading::after {
+  left: auto;
+  right: 0;
+  background: linear-gradient(-90deg, #f59e0b, transparent);
 }
