@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { t, parseLang } from "@/lib/i18n";
 import { products } from "@/data/products";
 import type { Lang, Category, Brand } from "@/lib/types";
@@ -5,15 +6,10 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import ProductCard from "@/components/ProductCard";
 import ProductFilters from "@/components/ProductFilters";
 
-export default async function ProductsPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ lang?: string; category?: string; brand?: string }>;
-}) {
-  const params = await searchParams;
-  const lang: Lang = parseLang(params.lang);
-  const categoryFilter = params.category as Category | undefined;
-  const brandFilter = params.brand as Brand | undefined;
+export default async function ProductsPage() {
+  const lang: Lang = 'pl';
+  const categoryFilter = undefined as Category | undefined;
+  const brandFilter = undefined as Brand | undefined;
 
   let filtered = products;
 
@@ -41,11 +37,13 @@ export default async function ProductsPage({
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar filters */}
           <aside className="lg:w-64 shrink-0">
-            <ProductFilters
-              lang={lang}
-              currentCategory={categoryFilter}
-              currentBrand={brandFilter}
-            />
+            <Suspense>
+              <ProductFilters
+                lang={lang}
+                currentCategory={categoryFilter}
+                currentBrand={brandFilter}
+              />
+            </Suspense>
           </aside>
 
           {/* Product grid */}

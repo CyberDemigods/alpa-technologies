@@ -7,13 +7,8 @@ import HeroSection from "@/components/HeroSection";
 import CategoryCard from "@/components/CategoryCard";
 import ProductCard from "@/components/ProductCard";
 
-export default async function HomePage({
-  searchParams,
-}: {
-  searchParams: Promise<{ lang?: string }>;
-}) {
-  const params = await searchParams;
-  const lang: Lang = parseLang(params.lang);
+export default async function HomePage() {
+  const lang: Lang = 'pl';
 
   const featured = products.filter((p) => p.badge).slice(0, 6);
 

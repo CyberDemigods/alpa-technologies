@@ -3,13 +3,8 @@ import { t, parseLang } from "@/lib/i18n";
 import type { Lang } from "@/lib/types";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export default async function AboutPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ lang?: string }>;
-}) {
-  const params = await searchParams;
-  const lang: Lang = parseLang(params.lang);
+export default async function AboutPage() {
+  const lang: Lang = 'pl';
 
   const breadcrumbs = [
     { label: t(lang, "breadcrumb.home"), href: `/?lang=${lang}` },

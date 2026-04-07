@@ -3,13 +3,8 @@ import type { Lang } from "@/lib/types";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactForm from "@/components/ContactForm";
 
-export default async function ContactPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ lang?: string }>;
-}) {
-  const params = await searchParams;
-  const lang: Lang = parseLang(params.lang);
+export default async function ContactPage() {
+  const lang: Lang = 'pl';
 
   const breadcrumbs = [
     { label: t(lang, "breadcrumb.home"), href: `/?lang=${lang}` },

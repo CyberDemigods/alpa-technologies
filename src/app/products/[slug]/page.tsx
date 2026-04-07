@@ -13,14 +13,11 @@ export async function generateStaticParams() {
 
 export default async function ProductDetailPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ lang?: string }>;
 }) {
   const { slug } = await params;
-  const sp = await searchParams;
-  const lang: Lang = parseLang(sp.lang);
+  const lang: Lang = 'pl';
 
   const product = products.find((p) => p.slug === slug);
   if (!product) notFound();
