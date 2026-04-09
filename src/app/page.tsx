@@ -63,7 +63,7 @@ export default async function HomePage() {
 
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <span className="block text-neon/60 text-xs uppercase tracking-[0.25em] font-medium">
+            <span className="block text-neon-dark text-xs uppercase tracking-[0.25em] font-semibold">
               {t(lang, 'home.services.label')}
             </span>
             <h2 className="section-heading inline-block mt-3">

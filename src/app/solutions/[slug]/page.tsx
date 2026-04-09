@@ -55,7 +55,6 @@ export default async function SolutionDetailPage({ params }: PageProps) {
               alt={info.name}
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-deep/60 to-transparent" />
           </div>
         )}
 

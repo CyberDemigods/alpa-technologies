@@ -42,8 +42,8 @@
 }
 
 [data-theme="light"] {
-  --th-nav-scrolled: rgba(255, 255, 255, 0.9);
-  --th-nav-idle: rgba(255, 255, 255, 0.6);
+  --th-nav-scrolled: rgba(255, 255, 255, 0.95);
+  --th-nav-idle: rgba(255, 255, 255, 0.85);
 }
 
 /* ── Base ──────────────────────────────────────────────────── */
@@ -156,4 +156,9 @@ body {
 
 [data-theme="light"] .nav-scrolled {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .nav-idle {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }

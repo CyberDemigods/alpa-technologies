@@ -64,7 +64,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href={`/${langParam}`} className="flex items-center gap-2 text-xl font-bold tracking-tight">
-            <img src={`${BASE_PATH}/images/alpa-logo.png`} alt="Alpa Technologies" className="h-9 w-auto drop-shadow-[0_0_1px_rgba(255,255,255,0.3)]" />
+            <img src={`${BASE_PATH}/images/alpa-logo.png`} alt="Alpa Technologies" className="h-9 w-auto" />
             <span className="text-text-primary">Alpa</span>
             <span className="bg-gradient-to-r from-neon to-electric bg-clip-text text-transparent">Technologies</span>
           </Link>
@@ -75,7 +75,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-text-primary/80 hover:text-neon transition-colors"
+                className="text-sm font-medium text-text-primary hover:text-neon transition-colors"
               >
                 {link.label}
               </Link>
