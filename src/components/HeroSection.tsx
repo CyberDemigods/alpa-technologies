@@ -25,10 +25,9 @@ export default function HeroSection({ lang }: HeroSectionProps) {
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-deep/95 via-deep/80 to-deep/60" />
-        {/* Bottom gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-deep via-transparent to-deep/40" />
+        {/* Dark overlay - hardcoded to stay dark in both themes */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#030712]/95 via-[#030712]/80 to-[#030712]/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#030712] via-transparent to-[#030712]/40" />
       </div>
 
       {/* Blueprint grid overlay */}

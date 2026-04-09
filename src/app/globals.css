@@ -1,72 +1,50 @@
 @import "tailwindcss";
 
-/* ── Tailwind v4 theme tokens (dark = default) ───────────── */
+/* ── Tailwind v4 theme tokens ─────────────────────────────── */
 @theme inline {
-  --color-deep: var(--th-deep);
-  --color-section: var(--th-section);
-  --color-card: var(--th-card);
-  --color-card-solid: var(--th-card-solid);
-  --color-card-hover: var(--th-card-hover);
+  --color-deep: #030712;
+  --color-deep-light: #ffffff;
+  --color-section: #0a0e1a;
+  --color-section-light: #f3f4f6;
+  --color-card-solid: #111827;
+  --color-card-solid-light: #ffffff;
+  --color-card-hover: #1a2235;
   --color-neon: #f59e0b;
   --color-neon-light: #fbbf24;
   --color-neon-dark: #d97706;
   --color-electric: #ef4444;
   --color-electric-light: #f87171;
-  --color-border-custom: var(--th-border);
-  --color-border-light: var(--th-border-light);
-  --color-text-primary: var(--th-text);
-  --color-text-secondary: var(--th-text-secondary);
-  --color-text-muted: var(--th-text-muted);
+  --color-border-custom: #243049;
+  --color-border-custom-light: #d1d5db;
+  --color-text-primary: #e5e7eb;
+  --color-text-primary-light: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-secondary-light: #4b5563;
+  --color-text-muted: #9ca3af;
+  --color-text-muted-light: #6b7280;
 }
 
-/* ── Dark theme (default) ─────────────────────────────────── */
+/* ── Theme switching via overrides ────────────────────────── */
 :root {
-  --th-deep: #030712;
-  --th-section: #0a0e1a;
-  --th-card: rgba(17, 24, 39, 0.5);
-  --th-card-solid: #111827;
-  --th-card-hover: #1a2235;
-  --th-border: #243049;
-  --th-border-light: rgba(36, 48, 73, 0.5);
-  --th-text: #e5e7eb;
-  --th-text-secondary: #6b7280;
-  --th-text-muted: #9ca3af;
-  --th-glass-bg: rgba(17, 24, 39, 0.5);
-  --th-glass-hover: rgba(26, 34, 53, 0.7);
-  --th-body-bg: #030712;
-  --th-body-color: #e5e7eb;
-  --th-scrollbar-track: #030712;
-  --th-scrollbar-thumb: #243049;
-  --th-selection-bg: rgba(245, 158, 11, 0.3);
-  --th-selection-color: #fbbf24;
   --th-nav-scrolled: rgba(3, 7, 18, 0.8);
   --th-nav-idle: rgba(3, 7, 18, 0.6);
-
 }
 
-/* ── Light theme ──────────────────────────────────────────── */
 [data-theme="light"] {
-  --th-deep: #ffffff;
-  --th-section: #f3f4f6;
-  --th-card: rgba(255, 255, 255, 0.8);
-  --th-card-solid: #ffffff;
-  --th-card-hover: #f9fafb;
-  --th-border: #d1d5db;
-  --th-border-light: rgba(209, 213, 219, 0.5);
-  --th-text: #111827;
-  --th-text-secondary: #4b5563;
-  --th-text-muted: #6b7280;
-  --th-glass-bg: rgba(255, 255, 255, 0.7);
-  --th-glass-hover: rgba(249, 250, 251, 0.9);
-  --th-body-bg: #ffffff;
-  --th-body-color: #111827;
-  --th-scrollbar-track: #f3f4f6;
-  --th-scrollbar-thumb: #d1d5db;
-  --th-selection-bg: rgba(245, 158, 11, 0.2);
-  --th-selection-color: #d97706;
-  --th-nav-scrolled: rgba(255, 255, 255, 0.85);
+  --th-nav-scrolled: rgba(255, 255, 255, 0.9);
   --th-nav-idle: rgba(255, 255, 255, 0.6);
+}
 
+/* Light theme: swap all semantic colors */
+[data-theme="light"] {
+  --color-deep: #ffffff;
+  --color-section: #f3f4f6;
+  --color-card-solid: #ffffff;
+  --color-card-hover: #f9fafb;
+  --color-border-custom: #d1d5db;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
 }
 
 /* ── Base ──────────────────────────────────────────────────── */
@@ -75,8 +53,8 @@ html {
 }
 
 body {
-  background-color: var(--th-body-bg);
-  color: var(--th-body-color);
+  background-color: var(--color-deep);
+  color: var(--color-text-primary);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -86,8 +64,13 @@ body {
 
 /* ── Selection ────────────────────────────────────────────── */
 ::selection {
-  background-color: var(--th-selection-bg);
-  color: var(--th-selection-color);
+  background-color: rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+}
+
+[data-theme="light"] ::selection {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #d97706;
 }
 
 /* ── Custom scrollbar ─────────────────────────────────────── */
@@ -97,11 +80,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--th-scrollbar-track);
+  background: var(--color-deep);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--th-scrollbar-thumb);
+  background: var(--color-border-custom);
   border-radius: 4px;
 }
 
@@ -111,45 +94,31 @@ body {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--th-scrollbar-thumb) var(--th-scrollbar-track);
+  scrollbar-color: var(--color-border-custom) var(--color-deep);
 }
 
 /* ── Glass card ───────────────────────────────────────────── */
 .glass-card {
-  background: var(--th-glass-bg);
+  background: rgba(17, 24, 39, 0.5);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--th-border);
+  border: 1px solid var(--color-border-custom);
   border-radius: 1rem;
   transition: all 0.3s ease;
 }
 
+[data-theme="light"] .glass-card {
+  background: rgba(255, 255, 255, 0.7);
+}
+
 .glass-card:hover {
-  background: var(--th-glass-hover);
+  background: rgba(26, 34, 53, 0.7);
   border-color: rgba(245, 158, 11, 0.3);
   box-shadow: 0 0 24px rgba(245, 158, 11, 0.08);
 }
 
-/* ── Contact form fields ──────────────────────────────────── */
-.form-field {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  background: var(--th-section);
-  border: 1px solid var(--th-border);
-  border-radius: 0.5rem;
-  color: var(--th-text);
-  font-size: 0.95rem;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  outline: none;
-}
-
-.form-field::placeholder {
-  color: var(--th-text-secondary);
-}
-
-.form-field:focus {
-  border-color: #f59e0b;
-  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15);
+[data-theme="light"] .glass-card:hover {
+  background: rgba(249, 250, 251, 0.9);
 }
 
 /* ── Section headings ─────────────────────────────────────── */
@@ -157,7 +126,7 @@ body {
   position: relative;
   font-size: 1.875rem;
   font-weight: 700;
-  color: var(--th-text);
+  color: var(--color-text-primary);
   padding-bottom: 0.75rem;
 }
 
@@ -172,9 +141,7 @@ body {
   border-radius: 2px;
 }
 
-/* ── Logo ─────────────────────────────────────────────────── */
-
-/* ── Navbar background theme-aware ────────────────────────── */
+/* ── Navbar background ────────────────────────────────────── */
 .nav-scrolled {
   background: var(--th-nav-scrolled);
   backdrop-filter: blur(16px);
@@ -185,4 +152,9 @@ body {
   background: var(--th-nav-idle);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+}
+
+/* ── Light theme shadow tweaks ────────────────────────────── */
+[data-theme="light"] .nav-scrolled {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
