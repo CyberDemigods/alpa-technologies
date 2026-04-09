@@ -1,41 +1,29 @@
 @import "tailwindcss";
 
-/* ── Tailwind v4 theme tokens ─────────────────────────────── */
-@theme inline {
+/* ── Theme colors that switch between dark/light ──────────── */
+/* Using @theme (not inline) so Tailwind generates CSS vars    */
+/* that can be overridden by [data-theme="light"]              */
+@theme {
   --color-deep: #030712;
-  --color-deep-light: #ffffff;
   --color-section: #0a0e1a;
-  --color-section-light: #f3f4f6;
   --color-card-solid: #111827;
-  --color-card-solid-light: #ffffff;
   --color-card-hover: #1a2235;
+  --color-border-custom: #243049;
+  --color-text-primary: #e5e7eb;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+}
+
+/* ── Static colors (same in both themes) ──────────────────── */
+@theme inline {
   --color-neon: #f59e0b;
   --color-neon-light: #fbbf24;
   --color-neon-dark: #d97706;
   --color-electric: #ef4444;
   --color-electric-light: #f87171;
-  --color-border-custom: #243049;
-  --color-border-custom-light: #d1d5db;
-  --color-text-primary: #e5e7eb;
-  --color-text-primary-light: #111827;
-  --color-text-secondary: #6b7280;
-  --color-text-secondary-light: #4b5563;
-  --color-text-muted: #9ca3af;
-  --color-text-muted-light: #6b7280;
 }
 
-/* ── Theme switching via overrides ────────────────────────── */
-:root {
-  --th-nav-scrolled: rgba(3, 7, 18, 0.8);
-  --th-nav-idle: rgba(3, 7, 18, 0.6);
-}
-
-[data-theme="light"] {
-  --th-nav-scrolled: rgba(255, 255, 255, 0.9);
-  --th-nav-idle: rgba(255, 255, 255, 0.6);
-}
-
-/* Light theme: swap all semantic colors */
+/* ── Light theme overrides ────────────────────────────────── */
 [data-theme="light"] {
   --color-deep: #ffffff;
   --color-section: #f3f4f6;
@@ -45,6 +33,17 @@
   --color-text-primary: #111827;
   --color-text-secondary: #4b5563;
   --color-text-muted: #6b7280;
+}
+
+/* ── Navbar background ────────────────────────────────────── */
+:root {
+  --th-nav-scrolled: rgba(3, 7, 18, 0.8);
+  --th-nav-idle: rgba(3, 7, 18, 0.6);
+}
+
+[data-theme="light"] {
+  --th-nav-scrolled: rgba(255, 255, 255, 0.9);
+  --th-nav-idle: rgba(255, 255, 255, 0.6);
 }
 
 /* ── Base ──────────────────────────────────────────────────── */
@@ -109,6 +108,7 @@ body {
 
 [data-theme="light"] .glass-card {
   background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .glass-card:hover {
@@ -154,7 +154,6 @@ body {
   -webkit-backdrop-filter: blur(4px);
 }
 
-/* ── Light theme shadow tweaks ────────────────────────────── */
 [data-theme="light"] .nav-scrolled {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
