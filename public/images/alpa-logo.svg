@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140" fill="none">
+  <!-- White boomerang/chevron (top, larger) - thick angular shape like a mountain peak -->
+  <polygon points="20,100 95,32 120,72 95,48 70,80 40,100" fill="#ffffff"/>
+
+  <!-- Red boomerang/chevron (overlapping, offset right and down) -->
+  <polygon points="55,108 130,38 160,85 130,58 105,88 75,108" fill="#ef4444"/>
+
+  <!-- Bird - simplified stylized shape sitting on red chevron upper-right area -->
+  <!-- Bird body: small curved shape -->
+  <path d="M142 52 C138 46 140 38 148 36 C152 35 155 38 154 42 C153 45 150 47 148 47 C150 49 156 54 160 56"
+        fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Bird tail/wing swoosh -->
+  <path d="M160 56 C162 50 166 46 170 48"
+        fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Circle above bird -->
+  <circle cx="150" cy="24" r="5.5" fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  <!-- Connecting line -->
+  <line x1="150" y1="29.5" x2="149" y2="34" stroke="#ffffff" stroke-width="1.8"/>
+</svg>

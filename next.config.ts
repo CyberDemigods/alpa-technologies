@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/persian-parts",
+  basePath: "/alpa-technologies",
   images: { unoptimized: true },
 };
 

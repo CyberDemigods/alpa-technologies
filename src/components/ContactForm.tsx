@@ -14,18 +14,18 @@ export default function ContactForm({ lang }: ContactFormProps) {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
-    alert(t(lang, 'contact.sent') || 'Message sent!');
   };
 
   const subjectOptions = [
-    { value: 'quote', label: t(lang, 'contact.subjectQuote') },
-    { value: 'catalog', label: t(lang, 'contact.subjectCatalog') },
-    { value: 'cooperation', label: t(lang, 'contact.subjectCooperation') },
+    { value: 'clusters', label: t(lang, 'contact.subjectClusters') },
+    { value: 'hvac', label: t(lang, 'contact.subjectHVAC') },
+    { value: 'multimedia', label: t(lang, 'contact.subjectMultimedia') },
+    { value: 'testing', label: t(lang, 'contact.subjectTesting') },
     { value: 'other', label: t(lang, 'contact.subjectOther') },
   ];
 
   const inputClasses =
-    'w-full bg-section border border-border-custom rounded-lg px-4 py-3 text-white placeholder:text-text-muted focus:border-neon focus:outline-none focus:ring-1 focus:ring-neon/30 transition-colors text-sm';
+    'w-full bg-section border border-border-custom rounded-lg px-4 py-3 text-text-primary placeholder:text-text-muted focus:border-neon focus:outline-none focus:ring-1 focus:ring-neon/30 transition-colors text-sm';
 
   const labelClasses = 'block text-sm font-medium text-text-secondary mb-1.5';
 
@@ -58,7 +58,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
         />
       </div>
 
-      {/* Subject */}
+      {/* Subject - Project Type */}
       <div>
         <label className={labelClasses}>{t(lang, 'contact.subjectLabel')}</label>
         <select required className={inputClasses}>
@@ -88,7 +88,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
         disabled={submitted}
         className="w-full bg-neon text-deep font-semibold py-3 rounded-lg hover:bg-neon-light transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {submitted ? t(lang, 'contact.sent') || 'Sent!' : t(lang, 'contact.submit')}
+        {submitted ? t(lang, 'contact.sent') : t(lang, 'contact.submit')}
       </button>
     </form>
   );

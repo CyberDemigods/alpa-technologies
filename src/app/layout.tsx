@@ -9,9 +9,9 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PersianParts -- Hurtowa dystrybucja części samochodowych",
+  title: "Alpa Technologies - Projektowanie elektroniki samochodowej",
   description:
-    "Hurtowa dystrybucja części samochodowych i elektroniki motoryzacyjnej z importu. Płytki PCB zestawów wskaźników, akumulatory, moduły ECU, oświetlenie, czujniki i okablowanie.",
+    "Oprogramowanie embedded, projekty PCB i kompletne rozwiązania dla zestawów wskaźników, kontrolerów HVAC i systemów multimedialnych. Każdy projekt dostosowany do specyfikacji klienta.",
 };
 
 export default function RootLayout({

@@ -12,10 +12,8 @@ interface BreadcrumbsProps {
 }
 
 export default function Breadcrumbs({ items, lang }: BreadcrumbsProps) {
-  const dir = lang === 'fa' ? 'rtl' : 'ltr';
-
   return (
-    <nav aria-label="Breadcrumb" dir={dir} className="text-sm text-text-secondary">
+    <nav aria-label="Breadcrumb" className="text-sm text-text-secondary">
       <ol className="flex items-center gap-2 flex-wrap">
         {items.map((item, idx) => {
           const isLast = idx === items.length - 1;

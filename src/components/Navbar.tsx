@@ -5,9 +5,11 @@ import Link from 'next/link';
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { t } from '@/lib/i18n';
 import type { Lang } from '@/lib/types';
+import ThemeToggle from './ThemeToggle';
 
-const LANG_STORAGE_KEY = 'persianparts-lang';
-const SUPPORTED: Lang[] = ['pl', 'en', 'fa'];
+const LANG_STORAGE_KEY = 'alpatech-lang';
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const SUPPORTED: Lang[] = ['pl', 'en'];
 
 export default function Navbar() {
   const searchParams = useSearchParams();
@@ -47,7 +49,7 @@ export default function Navbar() {
 
   const navLinks = [
     { label: t(lang, 'nav.home'), href: `/${langParam}` },
-    { label: t(lang, 'nav.products') || t(lang, 'nav.allProducts') || 'Katalog', href: `/products${langParam}` },
+    { label: t(lang, 'nav.solutions'), href: `/solutions${langParam}` },
     { label: t(lang, 'nav.about'), href: `/about${langParam}` },
     { label: t(lang, 'nav.contact'), href: `/contact${langParam}` },
   ];
@@ -55,15 +57,16 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-deep/80 backdrop-blur-xl shadow-lg shadow-black/20' : 'bg-deep/60 backdrop-blur-sm'
+        scrolled ? 'nav-scrolled shadow-lg shadow-black/10' : 'nav-idle'
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href={`/${langParam}`} className="flex items-center gap-0.5 text-xl font-bold tracking-tight">
-            <span className="text-white">Persian</span>
-            <span className="bg-gradient-to-r from-neon to-electric bg-clip-text text-transparent">Parts</span>
+          <Link href={`/${langParam}`} className="flex items-center gap-2 text-xl font-bold tracking-tight">
+            <img src={`${BASE_PATH}/images/alpa-logo.png`} alt="Alpa Technologies" className="h-9 w-auto drop-shadow-[0_0_1px_rgba(255,255,255,0.3)]" />
+            <span className="text-text-primary">Alpa</span>
+            <span className="bg-gradient-to-r from-neon to-electric bg-clip-text text-transparent">Technologies</span>
           </Link>
 
           {/* Desktop nav */}
@@ -79,8 +82,11 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right side: lang picker + CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          {/* Right side: theme + lang picker + CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Theme toggle */}
+            <ThemeToggle />
+
             {/* Language picker */}
             <div className="flex items-center gap-1 rounded-lg border border-border-custom/30 p-0.5">
               {SUPPORTED.map((l) => (
@@ -90,7 +96,7 @@ export default function Navbar() {
                   className={`px-2.5 py-1 text-xs font-medium rounded-md transition-colors uppercase ${
                     lang === l
                       ? 'bg-neon text-deep'
-                      : 'text-text-muted hover:text-white'
+                      : 'text-text-muted hover:text-text-primary'
                   }`}
                 >
                   {l}
@@ -107,20 +113,23 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-text-secondary hover:text-white"
-            aria-label="Toggle menu"
-          >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              {mobileOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          {/* Mobile: theme toggle + hamburger */}
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-2 text-text-secondary hover:text-text-primary"
+              aria-label="Toggle menu"
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                {mobileOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -148,7 +157,7 @@ export default function Navbar() {
                   className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors uppercase ${
                     lang === l
                       ? 'bg-neon text-deep'
-                      : 'text-text-muted hover:text-white border border-border-custom/30'
+                      : 'text-text-muted hover:text-text-primary border border-border-custom/30'
                   }`}
                 >
                   {l}
