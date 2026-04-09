@@ -86,7 +86,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
       <button
         type="submit"
         disabled={submitted}
-        className="w-full bg-neon text-deep font-semibold py-3 rounded-lg hover:bg-neon-light transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-neon text-[#030712] font-semibold py-3 rounded-lg hover:bg-neon-light transition-colors text-sm disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {submitted ? t(lang, 'contact.sent') : t(lang, 'contact.submit')}
       </button>

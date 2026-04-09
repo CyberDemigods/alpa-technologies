@@ -95,7 +95,7 @@ export default function Navbar() {
                   onClick={() => switchLang(l)}
                   className={`px-2.5 py-1 text-xs font-medium rounded-md transition-colors uppercase ${
                     lang === l
-                      ? 'bg-neon text-deep'
+                      ? 'bg-neon text-[#030712]'
                       : 'text-text-muted hover:text-text-primary'
                   }`}
                 >
@@ -107,7 +107,7 @@ export default function Navbar() {
             {/* CTA */}
             <Link
               href={`/contact${langParam}`}
-              className="bg-neon text-deep text-sm font-semibold px-5 py-2 rounded-lg hover:bg-neon-light transition-colors"
+              className="bg-neon text-[#030712] text-sm font-semibold px-5 py-2 rounded-lg hover:bg-neon-light transition-colors"
             >
               {t(lang, 'nav.cta')}
             </Link>
@@ -156,7 +156,7 @@ export default function Navbar() {
                   onClick={() => switchLang(l)}
                   className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors uppercase ${
                     lang === l
-                      ? 'bg-neon text-deep'
+                      ? 'bg-neon text-[#030712]'
                       : 'text-text-muted hover:text-text-primary border border-border-custom/30'
                   }`}
                 >
@@ -169,7 +169,7 @@ export default function Navbar() {
             <Link
               href={`/contact${langParam}`}
               onClick={() => setMobileOpen(false)}
-              className="block text-center bg-neon text-deep text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-neon-light transition-colors mt-3"
+              className="block text-center bg-neon text-[#030712] text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-neon-light transition-colors mt-3"
             >
               {t(lang, 'nav.cta')}
             </Link>

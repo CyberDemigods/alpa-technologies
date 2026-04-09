@@ -87,7 +87,7 @@ export default async function AboutPage() {
             </p>
             <Link
               href={`/contact?lang=${lang}`}
-              className="inline-flex items-center gap-2 px-8 py-3 bg-neon text-deep font-semibold rounded-xl hover:bg-neon-light transition-all shadow-lg shadow-neon/20"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-neon text-[#030712] font-semibold rounded-xl hover:bg-neon-light transition-all shadow-lg shadow-neon/20"
             >
               {t(lang, "about.cta")}
             </Link>

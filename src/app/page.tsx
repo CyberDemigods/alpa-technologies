@@ -125,7 +125,7 @@ export default async function HomePage() {
               </p>
               <Link
                 href={`/contact${langParam}`}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-neon text-deep font-bold rounded-xl hover:bg-neon-light transition-all text-lg shadow-lg shadow-neon/20"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-neon text-[#030712] font-bold rounded-xl hover:bg-neon-light transition-all text-lg shadow-lg shadow-neon/20"
               >
                 {t(lang, 'home.cta.button')}
               </Link>

@@ -111,7 +111,7 @@ export default async function SolutionDetailPage({ params }: PageProps) {
           </p>
           <Link
             href={`/contact${langParam}`}
-            className="inline-flex items-center gap-2 px-7 py-3 bg-neon text-deep font-semibold rounded-xl hover:bg-neon-light transition-all shadow-lg shadow-neon/20"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-neon text-[#030712] font-semibold rounded-xl hover:bg-neon-light transition-all shadow-lg shadow-neon/20"
           >
             {t(lang, 'solutions.cta')}
           </Link>

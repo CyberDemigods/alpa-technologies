@@ -71,7 +71,7 @@ export default function HeroSection({ lang }: HeroSectionProps) {
             <div className="flex flex-wrap gap-4 mb-16">
               <Link
                 href={`/solutions${langParam}`}
-                className="group bg-neon text-deep font-bold px-7 py-3.5 rounded-xl hover:bg-neon-light transition-all text-sm inline-flex items-center gap-2 shadow-lg shadow-neon/20"
+                className="group bg-neon text-[#030712] font-bold px-7 py-3.5 rounded-xl hover:bg-neon-light transition-all text-sm inline-flex items-center gap-2 shadow-lg shadow-neon/20"
               >
                 {t(lang, 'hero.ctaPrimary')}
                 <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
