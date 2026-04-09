@@ -75,7 +75,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-text-secondary hover:text-neon transition-colors"
+                className="text-sm text-text-primary/80 hover:text-neon transition-colors"
               >
                 {link.label}
               </Link>
