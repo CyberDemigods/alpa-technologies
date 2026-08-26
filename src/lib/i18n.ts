@@ -5,6 +5,10 @@ export const SUPPORTED_LANGS: Lang[] = ['pl', 'en'];
 
 const translations: Record<Lang, Record<string, string>> = {
   pl: {
+    // Meta (ustawiane klientowo w useLang, bo static export ma jeden <title>)
+    'meta.title': 'Alpa Technologies - Projektowanie elektroniki samochodowej',
+    'meta.description': 'Oprogramowanie embedded, projekty PCB i kompletne rozwiązania dla zestawów wskaźników, kontrolerów HVAC i systemów multimedialnych. Każdy projekt dostosowany do specyfikacji klienta.',
+
     // Nav
     'nav.home': 'Start',
     'nav.solutions': 'Rozwiązania',
@@ -106,6 +110,9 @@ const translations: Record<Lang, Record<string, string>> = {
   },
 
   en: {
+    'meta.title': 'Alpa Technologies - Automotive Electronics Design',
+    'meta.description': 'Embedded software, PCB design and complete solutions for instrument clusters, HVAC controllers and multimedia systems. Every project tailored to client specifications.',
+
     'nav.home': 'Home',
     'nav.solutions': 'Solutions',
     'nav.about': 'About',

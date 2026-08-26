@@ -63,7 +63,7 @@ function SolutionsContent() {
                     {info.shortDesc}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {solution.features.slice(0, 3).map((f) => (
+                    {info.features.slice(0, 3).map((f) => (
                       <span key={f} className="text-xs px-2.5 py-1 rounded-full border border-border-custom/40 text-text-muted">
                         {f}
                       </span>

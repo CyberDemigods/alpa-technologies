@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import type { Lang } from './types';
-import { DEFAULT_LANG, SUPPORTED_LANGS } from './i18n';
+import { DEFAULT_LANG, SUPPORTED_LANGS, t } from './i18n';
 
 export const LANG_STORAGE_KEY = 'alpatech-lang';
 
@@ -28,6 +28,11 @@ export function useLang(): Lang {
     setLang(resolved);
     localStorage.setItem(LANG_STORAGE_KEY, resolved);
     document.documentElement.lang = resolved;
+    // <title> i description z layout.tsx są statyczne (PL) — nadpisujemy po hydracji
+    document.title = t(resolved, 'meta.title');
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute('content', t(resolved, 'meta.description'));
   }, [paramLang]);
 
   return lang;

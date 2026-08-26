@@ -8,10 +8,18 @@ export interface Service {
   slug: ServiceSlug;
   image?: string;
   i18n: {
-    pl: { name: string; shortDesc: string; description: string };
-    en: { name: string; shortDesc: string; description: string };
+    pl: ServiceI18n;
+    en: ServiceI18n;
   };
+}
+
+export interface ServiceI18n {
+  name: string;
+  shortDesc: string;
+  description: string;
+  /** Zakres prac — lista pod nagłówkiem "Zakres prac / Scope of Work" */
   features: string[];
+  /** Parametry do określenia przez klienta */
   customizationOptions: string[];
 }
 
