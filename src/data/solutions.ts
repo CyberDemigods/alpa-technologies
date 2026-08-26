@@ -67,7 +67,7 @@ export const solutions: Service[] = [
           'Typ interfejsu (pokrętła, dotyk, przyciski)',
           'Rozmiar i typ wyświetlacza',
           'Protokół komunikacji z ECU',
-          'Design panelu frontowego',
+          'Projekt panelu frontowego',
           'Czujniki temperatury i wilgotności',
         ],
         name: 'Kontrolery HVAC',

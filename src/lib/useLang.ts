@@ -28,11 +28,25 @@ export function useLang(): Lang {
     setLang(resolved);
     localStorage.setItem(LANG_STORAGE_KEY, resolved);
     document.documentElement.lang = resolved;
-    // <title> i description z layout.tsx są statyczne (PL) — nadpisujemy po hydracji
-    document.title = t(resolved, 'meta.title');
-    document
-      .querySelector('meta[name="description"]')
-      ?.setAttribute('content', t(resolved, 'meta.description'));
+
+    // <title>/description z layout.tsx są statyczne (PL). Next 16 streamuje metadata
+    // i wstawia <title> już PO hydracji, więc samo jednorazowe nadpisanie przegrywa —
+    // pilnujemy <head> przez chwilę i przywracamy właściwy tytuł.
+    const title = t(resolved, 'meta.title');
+    const description = t(resolved, 'meta.description');
+    const apply = () => {
+      if (document.title !== title) document.title = title;
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta && meta.getAttribute('content') !== description) meta.setAttribute('content', description);
+    };
+    apply();
+    const observer = new MutationObserver(apply);
+    observer.observe(document.head, { childList: true, subtree: true, characterData: true });
+    const stop = window.setTimeout(() => observer.disconnect(), 5000);
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(stop);
+    };
   }, [paramLang]);
 
   return lang;
