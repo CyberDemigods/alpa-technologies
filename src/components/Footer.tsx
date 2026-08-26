@@ -37,7 +37,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href={`/${langParam}`} className="inline-flex items-center gap-2 text-xl font-bold tracking-tight mb-4">
-              <img src={`${BASE_PATH}/images/alpa-logo.png`} alt="Alpa Technologies" className="h-8 w-auto" />
+              <img src={`${BASE_PATH}/images/alpa-logo.svg`} alt="Alpa Technologies" className="h-8 w-auto" width="80" height="32" />
               <span className="text-text-primary">Alpa</span>
               <span className="bg-gradient-to-r from-neon to-electric bg-clip-text text-transparent">Technologies</span>
             </Link>

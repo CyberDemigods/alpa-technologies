@@ -64,7 +64,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href={`/${langParam}`} className="flex items-center gap-2 text-xl font-bold tracking-tight">
-            <img src={`${BASE_PATH}/images/alpa-logo.png`} alt="Alpa Technologies" className="h-9 w-auto" />
+            <img src={`${BASE_PATH}/images/alpa-logo.svg`} alt="Alpa Technologies" className="h-9 w-auto" width="90" height="36" />
             <span className="text-text-primary">Alpa</span>
             <span className="bg-gradient-to-r from-neon to-electric bg-clip-text text-transparent">Technologies</span>
           </Link>
