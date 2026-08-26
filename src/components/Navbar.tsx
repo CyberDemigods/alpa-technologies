@@ -61,10 +61,25 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <Link href={`/${langParam}`} className="flex items-center gap-2 text-xl font-bold tracking-tight">
-            <img src={`${BASE_PATH}/images/alpa-logo.svg`} alt="Alpa Technologies" className="h-9 w-auto" width="90" height="36" />
+        <div
+          className={`flex items-center justify-between transition-all duration-300 ${
+            scrolled ? 'h-16' : 'h-16 md:h-32'
+          }`}
+        >
+          {/* Logo — na starcie (desktop) dwukrotnie większy, po scrollu wraca do normy */}
+          <Link
+            href={`/${langParam}`}
+            className={`flex items-center gap-2 font-bold tracking-tight transition-all duration-300 ${
+              scrolled ? 'text-xl' : 'text-xl md:text-3xl md:gap-4'
+            }`}
+          >
+            <img
+              src={`${BASE_PATH}/images/alpa-logo.svg`}
+              alt="Alpa Technologies"
+              className={`w-auto transition-all duration-300 ${scrolled ? 'h-9' : 'h-9 md:h-20'}`}
+              width="90"
+              height="36"
+            />
             <span className="text-text-primary">Alpa</span>
             <span className="bg-gradient-to-r from-neon to-electric bg-clip-text text-transparent">Technologies</span>
           </Link>

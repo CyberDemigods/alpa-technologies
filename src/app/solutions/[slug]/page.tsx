@@ -32,7 +32,7 @@ export default async function SolutionDetailPage({ params }: PageProps) {
   ];
 
   return (
-    <section className="pt-24 pb-12 px-4">
+    <section className="pt-24 md:pt-40 pb-12 px-4">
       <div className="max-w-4xl mx-auto">
         <Breadcrumbs items={breadcrumbs} lang={lang} />
 
