@@ -1,12 +1,23 @@
+'use client';
+
+import { Suspense } from "react";
 import Link from "next/link";
 import { t } from "@/lib/i18n";
+import { useLang } from "@/lib/useLang";
 import { services } from "@/data/services";
-import type { Lang } from "@/lib/types";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
 
-export default async function HomePage() {
-  const lang: Lang = 'pl';
+export default function HomePage() {
+  return (
+    <Suspense>
+      <HomeContent />
+    </Suspense>
+  );
+}
+
+function HomeContent() {
+  const lang = useLang();
   const langParam = `?lang=${lang}`;
 
   const processSteps = [

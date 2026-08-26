@@ -1,12 +1,23 @@
+'use client';
+
+import { Suspense } from "react";
 import { t } from "@/lib/i18n";
+import { useLang } from "@/lib/useLang";
 import { solutions } from "@/data/solutions";
-import type { Lang } from "@/lib/types";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Link from "next/link";
 import { img } from "@/lib/assets";
 
-export default async function SolutionsPage() {
-  const lang: Lang = 'pl';
+export default function SolutionsPage() {
+  return (
+    <Suspense>
+      <SolutionsContent />
+    </Suspense>
+  );
+}
+
+function SolutionsContent() {
+  const lang = useLang();
   const langParam = `?lang=${lang}`;
 
   const breadcrumbs = [

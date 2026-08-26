@@ -1,10 +1,21 @@
+'use client';
+
+import { Suspense } from "react";
 import Link from "next/link";
 import { t } from "@/lib/i18n";
-import type { Lang } from "@/lib/types";
+import { useLang } from "@/lib/useLang";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
-export default async function AboutPage() {
-  const lang: Lang = 'pl';
+export default function AboutPage() {
+  return (
+    <Suspense>
+      <AboutContent />
+    </Suspense>
+  );
+}
+
+function AboutContent() {
+  const lang = useLang();
 
   const breadcrumbs = [
     { label: t(lang, "breadcrumb.home"), href: `/?lang=${lang}` },
