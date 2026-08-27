@@ -4,9 +4,19 @@ export type ServiceSlug =
   | 'multimedia'
   | 'testing';
 
+export interface GalleryImage {
+  src: string;
+  alt: {
+    pl: string;
+    en: string;
+  };
+}
+
 export interface Service {
   slug: ServiceSlug;
   image?: string;
+  /** Zdjęcia realizacji od klienta — sekcja "Realizacje / Product gallery" */
+  gallery?: GalleryImage[];
   i18n: {
     pl: ServiceI18n;
     en: ServiceI18n;

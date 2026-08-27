@@ -55,6 +55,10 @@ const translations: Record<Lang, Record<string, string>> = {
     'solutions.cta': 'Zapytaj o ten projekt',
     'solutions.back': 'Wszystkie rozwiązania',
     'solutions.other': 'Inne rozwiązania',
+    'solutions.gallery': 'Realizacje',
+    'solutions.gallery.close': 'Zamknij podgląd',
+    'solutions.gallery.prev': 'Poprzednie zdjęcie',
+    'solutions.gallery.next': 'Następne zdjęcie',
 
     // About
     'about.title': 'O Alpa Technologies',
@@ -155,6 +159,10 @@ const translations: Record<Lang, Record<string, string>> = {
     'solutions.cta': 'Inquire About This Project',
     'solutions.back': 'All Solutions',
     'solutions.other': 'Other Solutions',
+    'solutions.gallery': 'Our Work',
+    'solutions.gallery.close': 'Close preview',
+    'solutions.gallery.prev': 'Previous photo',
+    'solutions.gallery.next': 'Next photo',
 
     'about.title': 'About Alpa Technologies',
     'about.intro': 'Alpa Technologies is an engineering company specializing in automotive electronics design. We deliver complete solutions - from embedded software and PCB designs to ready prototypes and production documentation.',

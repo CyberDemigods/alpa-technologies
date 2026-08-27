@@ -4,6 +4,57 @@ export const solutions: Service[] = [
   {
     slug: 'instrument-clusters',
     image: '/images/pcb-clusters.jpg',
+    gallery: [
+      {
+        src: '/images/products/cluster-lcd-hex.jpg',
+        alt: {
+          pl: 'Zestaw wskaźników z wyświetlaczem LCD i sześciokątnymi tarczami, skala do 200 km/h',
+          en: 'Instrument cluster with LCD display and hexagonal gauges, 200 km/h scale',
+        },
+      },
+      {
+        src: '/images/products/cluster-analog-gauges.jpg',
+        alt: {
+          pl: 'Analogowy zestaw wskaźników z trzema tarczami, skala do 210 km/h',
+          en: 'Analogue instrument cluster with three gauges, 210 km/h scale',
+        },
+      },
+      {
+        src: '/images/products/cluster-lcd-front.jpg',
+        alt: {
+          pl: 'Zestaw wskaźników z trzema tarczami i centralnym wyświetlaczem LCD — widok z przodu',
+          en: 'Instrument cluster with three gauges and central LCD display - front view',
+        },
+      },
+      {
+        src: '/images/products/cluster-lcd-white.jpg',
+        alt: {
+          pl: 'Płytka PCB zestawu wskaźników z wyświetlaczem LCD w białej obudowie łukowej',
+          en: 'Instrument cluster PCB with LCD display in a white arc-shaped housing',
+        },
+      },
+      {
+        src: '/images/products/cluster-pcb-iso.jpg',
+        alt: {
+          pl: 'Płytka PCB zestawu wskaźników z dwiema tarczami i wyświetlaczem LCD — widok izometryczny',
+          en: 'Instrument cluster PCB with two gauges and LCD display - isometric view',
+        },
+      },
+      {
+        src: '/images/products/lcd-module-front.jpg',
+        alt: {
+          pl: 'Moduł wyświetlacza LCD — strona frontowa płytki',
+          en: 'LCD display module - front side of the board',
+        },
+      },
+      {
+        src: '/images/products/lcd-module-back.jpg',
+        alt: {
+          pl: 'Moduł wyświetlacza LCD — strona lutownicza płytki z elementami SMD',
+          en: 'LCD display module - solder side of the board with SMD components',
+        },
+      },
+    ],
     i18n: {
       pl: {
         features: [
@@ -52,6 +103,22 @@ export const solutions: Service[] = [
   {
     slug: 'hvac-controllers',
     image: '/images/hvac-controller.jpg',
+    gallery: [
+      {
+        src: '/images/products/hvac-panel.jpg',
+        alt: {
+          pl: 'Panel sterowania klimatyzacją z pokrętłami i przyciskami',
+          en: 'Climate control panel with rotary knobs and buttons',
+        },
+      },
+      {
+        src: '/images/products/controller-pcb-connector.jpg',
+        alt: {
+          pl: 'Płytka PCB sterownika — strona tylna ze złączem',
+          en: 'Controller PCB - rear side with connector',
+        },
+      },
+    ],
     i18n: {
       pl: {
         features: [
@@ -100,6 +167,15 @@ export const solutions: Service[] = [
   {
     slug: 'multimedia',
     image: '/images/multimedia-unit.jpg',
+    gallery: [
+      {
+        src: '/images/products/display-housing.jpg',
+        alt: {
+          pl: 'Obudowa wyświetlacza samochodowego',
+          en: 'Automotive display housing',
+        },
+      },
+    ],
     i18n: {
       pl: {
         features: [

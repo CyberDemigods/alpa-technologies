@@ -7,6 +7,7 @@ import { useLang } from "@/lib/useLang";
 import { solutions } from "@/data/solutions";
 import { img } from "@/lib/assets";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import SolutionGallery from "@/components/SolutionGallery";
 
 interface SolutionDetailProps {
   slug: string;
@@ -105,6 +106,9 @@ function SolutionDetailContent({ slug }: SolutionDetailProps) {
             </ul>
           </div>
         </div>
+
+        {/* Gallery */}
+        {solution.gallery && <SolutionGallery images={solution.gallery} lang={lang} />}
 
         {/* CTA */}
         <div className="bg-card-solid border border-neon/20 rounded-2xl p-8 text-center mb-14">
