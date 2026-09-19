@@ -68,6 +68,7 @@ export default function RootLayout({
               image: `${SITE_URL}/images/og-cover.jpg`,
               description: DESCRIPTION,
               email: "info@alpatechs.pl",
+              telephone: "+48516976054",
               vatID: "PL8971802551",
               address: {
                 "@type": "PostalAddress",
